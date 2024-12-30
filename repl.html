@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<meta name="theme-color" content="#333333" />
+		<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		
+		<link rel="modulepreload" href="./_app/immutable/entry/start.BQbsfHJb.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.Dz7wqagb.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/utils.CJAfLu7n.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.BtPFLMy9.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.DfK207we.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.4zoQEAJ5.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/render.CfvtWDgS.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/if.Dfke5Qdj.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/svelte-head.CoG-BEWW.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/template.CV4TamR3.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/disclose-version.Bg9kRutz.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/props.DPVyA6hB.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/store.BFJyLPHz.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-client.B2ZHp8Gn.js">
+	</head>
+	<body>
+		<div>
+			<script>
+				{
+					__sveltekit_1q7bf69 = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("./_app/immutable/entry/start.BQbsfHJb.js"),
+						import("./_app/immutable/entry/app.DfK207we.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+
+					if ('serviceWorker' in navigator) {
+						addEventListener('load', function () {
+							navigator.serviceWorker.register('./service-worker.js');
+						});
+					}
+				}
+			</script>
+		</div>
+	</body>
+</html>
