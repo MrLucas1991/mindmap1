@@ -504,6 +504,30 @@ export class Markmap {
       .attr('stroke', (d) => color(d))
       .attr('stroke-width', linkWidth);
 
+    // Dodanie ikon +/-
+const mmToggleIcon = mmGMerge
+  .selectAll<SVGTextElement, INode>('text.toggle-icon')
+  .data(
+    (d) => (d.children || d.payload?.fold ? [d] : []), // tylko dla węzłów z dziećmi
+    (d) => d.state.key,
+  );
+
+const mmToggleIconEnter = mmToggleIcon
+  .enter()
+  .append('text')
+  .attr('class', 'toggle-icon')
+  .attr('text-anchor', 'middle')
+  .attr('x', (d) => d.state.rect.width + 8) // Ustawienie pozycji
+  .attr('y', (d) => d.state.rect.height / 2)
+  .attr('dy', '0.35em') // Wyrównanie w pionie
+  .text((d) => (d.payload?.fold ? '+' : '-')) // Wyświetlanie +/-
+  .on('click', (e, d) => this.handleClick(e, d)); // Obsługa kliknięcia
+
+mmToggleIconEnter.merge(mmToggleIcon)
+  .text((d) => (d.payload?.fold ? '+' : '-')); // Aktualizacja tekstu
+
+    
+
     const mmCircleExit = mmGExit.selectAll<SVGCircleElement, INode>(
       childSelector<SVGCircleElement>('circle'),
     );
