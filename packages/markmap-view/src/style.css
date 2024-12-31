@@ -91,6 +91,26 @@
       }
     }
   }
+
+  &-toggle {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    color: var(--markmap-text-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--markmap-circle-open-bg);
+    border: 1px solid var(--markmap-text-color);
+    cursor: pointer;
+  }
+
+  &-dark &-toggle {
+    background-color: var(--markmap-code-bg);
+    color: var(--markmap-code-color);
+  }
 }
 
 .markmap-dark .markmap {
@@ -99,3 +119,4 @@
   --markmap-circle-open-bg: #444;
   --markmap-text-color: #eee;
 }
+
